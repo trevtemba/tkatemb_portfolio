@@ -1,29 +1,52 @@
+'use client';
+
 import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export const Navbar: React.FC = () => {
-  return (
-    <nav className="fixed top-0 w-full bg-black-100 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center border-b-1 border-gray-800">
-        <span className="text-xl font-bold">
-          <span className="text-white">Trev</span>
-          <span className="text-purple-500">Dev</span>
-        </span>
+  const pathName = usePathname();
 
-        <div className="font-sans text-xs flex gap-12 p-2">
-          <Link href="/" className="hover:text-gray-300 transition">
-            About
+  const navItems = [
+    { href: '/', icon: '/icons/home.svg', alt: 'Home' },
+    { href: '/projects', icon: '/icons/projects.svg', alt: 'Projects' },
+    { href: '/experience', icon: '/icons/experience.svg', alt: 'Experience' },
+    { href: '/contact', icon: '/icons/contact.svg', alt: 'Contact' },
+  ];
+
+  return (
+    <nav
+      className="fixed top-4 left-1/2 -translate-x-1/2 
+                    bg-neutral-800 border border-gray-700 
+                    rounded-2xl shadow-lg
+                    px-4 py-5 flex justify-around items-center 
+                    w-[92%] max-w-md"
+    >
+      {navItems.map(({ href, icon, alt }) => {
+        const isActive = pathName === href;
+        return (
+          <Link
+            key={href}
+            href={href}
+            className="relative flex items-center justify-center"
+          >
+            {isActive && (
+              <span className="absolute w-10 h-10 rounded-full bg-neutral-700" />
+            )}
+            <Image
+              src={icon}
+              alt={alt}
+              width={24}
+              height={24}
+              className={`relative transition ${
+                isActive
+                  ? 'brightness-100'
+                  : 'brightness-75 hover:brightness-200'
+              }`}
+            />
           </Link>
-          <Link href="/projects" className="hover:text-gray-300 transition">
-            Projects
-          </Link>
-          <Link href="/experience" className="hover:text-gray-300 transition">
-            Experience
-          </Link>
-          <Link href="/contact" className="hover:text-gray-300 transition">
-            Contact
-          </Link>
-        </div>
-      </div>
+        );
+      })}
     </nav>
   );
 };
