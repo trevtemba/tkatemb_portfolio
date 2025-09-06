@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        roboto: ['var(--font-roboto)', 'sans-serif'],
-        robotoMono: ['var(--font-roboto-mono)', 'monospace'],
+        inter: ["var(--font-inter)", "sans-serif"], // <-- Inter
+        robotoMono: ["var(--font-roboto-mono)", "monospace"], // optional
       },
     },
   },
