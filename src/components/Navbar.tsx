@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export const Navbar: React.FC = () => {
   const pathName = usePathname();
 
   const navItems = [
-    { href: '/', icon: '/icons/home.svg', alt: 'Home' },
-    { href: '/projects', icon: '/icons/projects.svg', alt: 'Projects' },
-    { href: '/experience', icon: '/icons/experience.svg', alt: 'Experience' },
-    { href: '/contact', icon: '/icons/contact.svg', alt: 'Contact' },
+    { href: "/", icon: "/icons/home.svg", alt: "Home" },
+    { href: "/projects", icon: "/icons/projects.svg", alt: "Projects" },
+    { href: "/experience", icon: "/icons/experience.svg", alt: "Experience" },
+    { href: "/contact", icon: "/icons/contact.svg", alt: "Contact" },
   ];
 
   return (
@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
       className="fixed top-4 left-1/2 -translate-x-1/2 
                     bg-neutral-800 border border-gray-700 
                     rounded-2xl shadow-lg
-                    px-4 py-5 flex justify-around items-center 
+                    px-4 py-4 flex justify-around items-center 
                     w-[92%] max-w-md"
     >
       {navItems.map(({ href, icon, alt }) => {
@@ -31,7 +31,7 @@ export const Navbar: React.FC = () => {
             className="relative flex items-center justify-center"
           >
             {isActive && (
-              <span className="absolute w-10 h-10 rounded-full bg-neutral-700" />
+              <span className="absolute w-10 h-10 rounded-2xl bg-neutral-700" />
             )}
             <Image
               src={icon}
@@ -40,8 +40,8 @@ export const Navbar: React.FC = () => {
               height={24}
               className={`relative transition ${
                 isActive
-                  ? 'brightness-100'
-                  : 'brightness-75 hover:brightness-200'
+                  ? "brightness-100"
+                  : "brightness-75 hover:brightness-200"
               }`}
             />
           </Link>

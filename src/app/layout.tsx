@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import { Roboto, Roboto_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className="antialiased font-roboto">
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
