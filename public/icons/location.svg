@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer_1">
+    <g id="Page-1">
+      <g id="Icon-Set-Filled">
+        <path id="location" class="cls-1" d="M300,225c-41.42,0-75,33.57-75,75s33.58,75,75,75,75-33.57,75-75-33.58-75-75-75h0ZM300,425c-69.03,0-125-55.95-125-125s55.97-125,125-125,125,55.95,125,125-55.97,125-125,125h0ZM300,0C134.33,0,0,134.32,0,300c0,125.45,250.12,500.27,300,500,49.1.27,300-376.25,300-500C600,134.32,465.67,0,300,0h0Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -7,7 +7,7 @@ export default function Home() {
         className="
           bg-neutral-800 border border-gray-700
           rounded-2xl shadow-lg
-         pt-6 pb-1 flex flex-col gap-5 items-center
+         pt-4 pb-1 flex flex-col gap-5 items-center
          px-1
           w-[92%] max-w-md
         "
@@ -16,7 +16,7 @@ export default function Home() {
         <div className="w-full flex justify-between items-center px-5">
           <div className="flex items-center">
             <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
-            <span className="text-gray-300">Fullstack Engineer</span>
+            <span className="text-gray-300/80">Fullstack Engineer</span>
           </div>
           <div className="flex flex-row items-center bg-green-900/40 text-white gap-2 rounded-full px-4 py-0.5">
             <div className="w-1 h-1 bg-green-400 rounded-full"></div>
@@ -212,51 +212,4 @@ export default function Home() {
       </div>
     </main>
   );
-}
-
-{
-  /* Social Icons */
-}
-{
-  /* <div className="flex mt-2 gap-4 items-center">
-              <a
-                href="https://github.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:brightness-125 transition"
-              >
-                <Image
-                  src="/icons/github.svg"
-                  alt="GitHub"
-                  width={24}
-                  height={24}
-                />
-              </a>
-
-              <a
-                href="https://linkedin.com/in/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:brightness-125 transition"
-              >
-                <Image
-                  src="/icons/linkedin.svg"
-                  alt="LinkedIn"
-                  width={24}
-                  height={24}
-                />
-              </a>
-
-              <a
-                href="mailto:youremail@example.com"
-                className="hover:brightness-125 transition"
-              >
-                <Image
-                  src="/icons/email.svg"
-                  alt="Email"
-                  width={24}
-                  height={24}
-                />
-              </a>
-            </div> */
 }
