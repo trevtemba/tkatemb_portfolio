@@ -7,7 +7,7 @@ export default function Home() {
         className="
           bg-neutral-800 border border-gray-700
           rounded-2xl shadow-lg
-         pt-4 pb-1 flex flex-col gap-5 items-center
+         pt-4 pb-1 flex flex-col gap-4 items-center
          px-1
           w-[92%] max-w-md
         "
@@ -42,6 +42,7 @@ export default function Home() {
                 download
                 className="flex flex-row justify-between bg-neutral-700 hover:bg-neutral-700/80 text-white text-sm font-medium px-4 py-2 border border-gray-600 rounded-sm shadow transition gap-2"
               >
+                Resume
                 <Image
                   src="/icons/download.svg"
                   alt="Download"
@@ -49,7 +50,6 @@ export default function Home() {
                   height={12}
                   className=""
                 />
-                Resume
               </a>
               <a
                 href="https://github.com/trevtemba"
@@ -57,14 +57,14 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="flex flex-row justify-between bg-neutral-700 hover:bg-neutral-700/80 text-white text-sm font-medium px-4 py-2 border border-gray-600 rounded-sm shadow transition gap-2"
               >
+                GitHub
                 <Image
-                  src="/icons/link.svg"
+                  src="/icons/newtab.svg"
                   alt="Link"
                   width={12}
                   height={12}
                   className=""
                 />
-                GitHub
               </a>
             </div>
           </div>
