@@ -14,11 +14,11 @@ export const Navbar: React.FC = () => {
     { href: "/contact", icon: "/icons/contact.svg", alt: "Contact" },
   ];
 
-  const positions = ["1%", "26%", "51%", "74%"]; // left offsets for each navbutton
+  const positions = ["1%", "25%", "50%", "74%"]; // left offsets for each navbutton
   const activeIndex = navItems.findIndex((item) => item.href === pathName);
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-neutral-800 border border-gray-700 rounded-full shadow-lg px-1 py-4 flex justify-around items-center w-[92%] max-w-md">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 bg-neutral-800 border border-gray-700 rounded-full shadow-lg px-1 py-4 flex justify-around items-center w-[92%] max-w-md z-90">
       {/* Sliding pill */}
       <div
         className="absolute inset-y-1 w-[25%] bg-neutral-600/50 rounded-full z-0 transition-all"
