@@ -298,7 +298,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* Programming Languages */}
+          {/* Frameworks and libraries */}
           <div className="w-full flex items-center justify-center mt-4">
             <div className="">
               <span className="text-gray-300/80 bg-neutral-900 rounded-full px-12 py-2 border text-sm border-neutral-700 shadow">
@@ -373,6 +373,154 @@ export default function Home() {
 
                 <span className="flex-[5] text-blue-400 font-normal text-right text-sm">
                   Intermediate
+                </span>
+              </div>
+            </div>
+            {/* Skill */}
+            <div className="flex flex-col w-full justify-between items-stretch gap-2 bg-neutral-800 px-4 py-4 rounded-2xl border border-neutral-700 shadow">
+              <div className="flex flex-row items-center gap-2 w-full">
+                <span className="flex-[5] text-gray-300/80 font-normal text-left text-sm">
+                  Tailwind
+                </span>
+
+                {/* Progress bar container */}
+                <div className="relative flex-[10] bg-neutral-900 rounded-full h-4 px-1 py-1 overflow-hidden">
+                  {/* Fill (progress level) */}
+                  <div className="bg-blue-500 h-full rounded-full w-3/5"></div>
+
+                  {/* Divider at 1/3 */}
+                  <div className="absolute top-0 bottom-0 left-1/3 w-1 bg-neutral-900"></div>
+                  {/* Divider at 2/3 */}
+                  <div className="absolute top-0 bottom-0 left-2/3 w-1 bg-neutral-900"></div>
+                </div>
+
+                <span className="flex-[5] text-blue-400 font-normal text-right text-sm">
+                  Intermediate
+                </span>
+              </div>
+            </div>
+            {/* Skill */}
+            <div className="flex flex-col w-full justify-between items-stretch gap-2 bg-neutral-800 px-4 py-4 rounded-2xl border border-neutral-700 shadow">
+              <div className="flex flex-row items-center gap-2 w-full">
+                <span className="flex-[5] text-gray-300/80 font-normal text-left text-sm">
+                  Next.js
+                </span>
+
+                {/* Progress bar container */}
+                <div className="relative flex-[10] bg-neutral-900 rounded-full h-4 px-1 py-1 overflow-hidden">
+                  {/* Fill (progress level) */}
+                  <div className="bg-blue-500 h-full rounded-full w-2/5"></div>
+
+                  {/* Divider at 1/3 */}
+                  <div className="absolute top-0 bottom-0 left-1/3 w-1 bg-neutral-900"></div>
+                  {/* Divider at 2/3 */}
+                  <div className="absolute top-0 bottom-0 left-2/3 w-1 bg-neutral-900"></div>
+                </div>
+
+                <span className="flex-[5] text-blue-400 font-normal text-right text-sm">
+                  Intermediate
+                </span>
+              </div>
+            </div>
+            {/* Skill */}
+            <div className="flex flex-col w-full justify-between items-stretch gap-2 bg-neutral-800 px-4 py-4 rounded-2xl border border-neutral-700 shadow">
+              <div className="flex flex-row items-center gap-2 w-full">
+                <span className="flex-[5] text-gray-300/80 font-normal text-left text-sm">
+                  Python ML
+                </span>
+
+                {/* Progress bar container */}
+                <div className="relative flex-[10] bg-neutral-900 rounded-full h-4 px-1 py-1 overflow-hidden">
+                  {/* Fill (progress level) */}
+                  <div className="bg-blue-500 h-full rounded-full w-2/5"></div>
+
+                  {/* Divider at 1/3 */}
+                  <div className="absolute top-0 bottom-0 left-1/3 w-1 bg-neutral-900"></div>
+                  {/* Divider at 2/3 */}
+                  <div className="absolute top-0 bottom-0 left-2/3 w-1 bg-neutral-900"></div>
+                </div>
+
+                <span className="flex-[5] text-blue-400 font-normal text-right text-sm">
+                  Intermediate
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* Dev-Ops */}
+          <div className="w-full flex items-center justify-center mt-4">
+            <div className="">
+              <span className="text-gray-300/80 bg-neutral-900 rounded-full px-12 py-2 border text-sm border-neutral-700 shadow">
+                Dev-Ops
+              </span>
+            </div>
+          </div>
+          {/* Skills Container */}
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col w-full justify-between items-stretch gap-4 bg-neutral-800 px-4 py-4 rounded-2xl border border-neutral-700 shadow">
+              {/* Skill */}
+              <div className="flex flex-row items-center gap-2 w-full">
+                <span className="flex-[5] text-gray-300/80 font-normal text-left text-sm">
+                  AWS
+                </span>
+
+                {/* Progress bar container */}
+                <div className="relative flex-[10] bg-neutral-900 rounded-full h-4 px-1 py-1 overflow-hidden">
+                  {/* Fill (progress level) */}
+                  <div className="bg-violet-600 h-full rounded-full w-2/3"></div>
+
+                  {/* Divider at 1/3 */}
+                  <div className="absolute top-0 bottom-0 left-1/3 w-1 bg-neutral-900"></div>
+                  {/* Divider at 2/3 */}
+                  <div className="absolute top-0 bottom-0 left-2/3 w-1 bg-neutral-900"></div>
+                </div>
+
+                <span className="flex-[5] text-violet-600 font-normal text-right text-sm">
+                  Advanced
+                </span>
+              </div>
+            </div>
+            {/* Skill */}
+            <div className="flex flex-col w-full justify-between items-stretch gap-2 bg-neutral-800 px-4 py-4 rounded-2xl border border-neutral-700 shadow">
+              <div className="flex flex-row items-center gap-2 w-full">
+                <span className="flex-[5] text-gray-300/80 font-normal text-left text-sm">
+                  Docker
+                </span>
+                {/* Progress bar container */}
+                <div className="relative flex-[10] bg-neutral-900 rounded-full h-4 px-1 py-1 overflow-hidden">
+                  {/* Fill (progress level) */}
+                  <div className="bg-blue-500 h-full rounded-full w-2/3"></div>
+
+                  {/* Divider at 1/3 */}
+                  <div className="absolute top-0 bottom-0 left-1/3 w-1 bg-neutral-900"></div>
+                  {/* Divider at 2/3 */}
+                  <div className="absolute top-0 bottom-0 left-2/3 w-1 bg-neutral-900"></div>
+                </div>
+
+                <span className="flex-[5] text-blue-400 font-normal text-right text-sm">
+                  Intermediate
+                </span>
+              </div>
+            </div>
+            {/* Skill */}
+            <div className="flex flex-col w-full justify-between items-stretch gap-2 bg-neutral-800 px-4 py-4 rounded-2xl border border-neutral-700 shadow">
+              <div className="flex flex-row items-center gap-2 w-full">
+                <span className="flex-[5] text-gray-300/80 font-normal text-left text-sm">
+                  Kubernetes
+                </span>
+
+                {/* Progress bar container */}
+                <div className="relative flex-[10] bg-neutral-900 rounded-full h-4 px-1 py-1 overflow-hidden">
+                  {/* Fill (progress level) */}
+                  <div className="bg-green-500 h-full rounded-full w-4/6"></div>
+
+                  {/* Divider at 1/3 */}
+                  <div className="absolute top-0 bottom-0 left-1/3 w-1 bg-neutral-900"></div>
+                  {/* Divider at 2/3 */}
+                  <div className="absolute top-0 bottom-0 left-2/3 w-1 bg-neutral-900"></div>
+                </div>
+
+                <span className="flex-[5] text-green-400 font-normal text-right text-sm">
+                  Familiar
                 </span>
               </div>
             </div>
