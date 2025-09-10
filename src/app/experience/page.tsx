@@ -173,7 +173,7 @@ export default function Home() {
             </div>
           </div>
           {/* Programming Languages */}
-          <div className="w-full flex items-center justify-center">
+          <div className="w-full flex items-center justify-center mt-4">
             <div className="">
               <span className="text-gray-300/80 bg-neutral-900 rounded-full px-12 py-2 border text-sm border-neutral-700 shadow">
                 Programming Languages
@@ -299,7 +299,7 @@ export default function Home() {
             </div>
           </div>
           {/* Programming Languages */}
-          <div className="w-full flex items-center justify-center">
+          <div className="w-full flex items-center justify-center mt-4">
             <div className="">
               <span className="text-gray-300/80 bg-neutral-900 rounded-full px-12 py-2 border text-sm border-neutral-700 shadow">
                 Frameworks | Libaries
