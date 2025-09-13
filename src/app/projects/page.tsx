@@ -1,7 +1,11 @@
+"use client";
+
 import { spawn } from "child_process";
 import Image from "next/image";
+import { Component, useState } from "react";
+import Crown from "./crown/page";
 
-export default function Home() {
+export default function Projects() {
   const projects = [
     {
       name: "Crown",
@@ -9,6 +13,7 @@ export default function Home() {
       desc: "Hair product recommendation mobile app",
       tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
       icon: "/icons/crownlogo.png",
+      comp: Crown,
     },
     {
       name: "Soul Fighters",
@@ -41,13 +46,24 @@ export default function Home() {
     icon: string;
   };
 
+  const [selectedProject, setSelectedProject] = useState<string | undefined>(
+    undefined,
+  );
+  const project = projects.find((p) => p.name === selectedProject);
+  const SelectedProjectComponent = project?.comp;
+
+  function SelectProject(projectName: string) {
+    setSelectedProject(projectName);
+  }
+
   function ProjectCard({ name, role, desc, tags, icon }: ProjectProps) {
     return (
       <button
         key={name}
         className="w-full flex flex-row px-4 py-4 bg-neutral-900 border hover:bg-neutral-900/70 gap-4 border-neutral-700 shadow rounded-2xl"
+        onClick={() => SelectProject(name)}
       >
-        <div className="flex-[9] flex flex-col items-stretch gap-2">
+        <div className="flex-[9] flex flex-col items-stretch gap-4">
           <div className="flex w-full justify-between items-stretch gap-4">
             {/*  Image */}
             <div className="flex-[6] flex flex-col items-center flex-shrink-0">
@@ -87,7 +103,7 @@ export default function Home() {
             </div>
           </div>
           {/* skils */}
-          <div className="flex flex-row flex-wrap gap-1">
+          <div className="flex flex-row flex-wrap gap-2">
             {tags.map((tag) => (
               <span
                 key={tag}
@@ -117,23 +133,40 @@ export default function Home() {
         className="
           bg-neutral-800 border border-gray-700
           rounded-2xl shadow-lg
-         pt-4 pb-1 flex flex-col gap-4 items-center
+        pb-1 flex flex-col gap-4 items-center
          px-1
           w-[92%] max-w-md
         "
       >
-        {/* CURRENT PROJECT */}
-        <div className="w-full flex flex-col rounded-2xl py-5 px-5 gap-5">
-          {/* Header */}
-          <div className="w-full flex justify-between items-center px-5">
-            <div className="flex items-center">
-              <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
-              <span className="text-gray-300/80">Software Projects</span>
+        {!selectedProject && (
+          <div className="w-full flex flex-col rounded-2xl py-4 px-5 gap-6">
+            {/* Header */}
+            <div className="w-full flex justify-between items-center">
+              <div className="flex items-center">
+                <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
+                <span className="text-gray-300/80">Software Projects</span>
+              </div>
             </div>
-          </div>
 
-          {projects.map((item) => ProjectCard({ ...item }))}
-        </div>
+            {projects.map((item) => ProjectCard({ ...item }))}
+          </div>
+        )}
+        {selectedProject && (
+          <div className="w-full flex flex-col rounded-2xl py-4 px-5 gap-6">
+            {/* Header */}
+            <div className="w-full flex justify-between items-center">
+              <div className="flex items-center">
+                <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
+                <span className="text-gray-300/80">Project Info</span>
+              </div>
+            </div>
+            {SelectedProjectComponent ? (
+              <SelectedProjectComponent />
+            ) : (
+              <p>No component available for this project.</p>
+            )}
+          </div>
+        )}
       </div>
     </main>
   );
