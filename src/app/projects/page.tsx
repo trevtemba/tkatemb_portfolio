@@ -18,6 +18,13 @@ export default function Home() {
       icon: "/icons/explosionlabs.png",
     },
     {
+      name: "SFX Mapper",
+      role: "Lead Developer",
+      desc: "CLI tool that gives basic sound effects timings based on bpm",
+      tags: ["Go"],
+      icon: "/icons/flux.png",
+    },
+    {
       name: "Neur",
       role: "Lead Developer",
       desc: "Collegiate Entrepreneur social app",
