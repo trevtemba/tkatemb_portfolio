@@ -159,6 +159,10 @@ export default function Projects() {
                 <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
                 <span className="text-gray-300/80">Project Info</span>
               </div>
+              <div className="flex flex-row items-center bg-green-900/40 text-white gap-2 rounded-full px-4 py-0.5">
+                <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+                <span className="text-green-600 text-sm">Alpha</span>
+              </div>
             </div>
             {SelectedProjectComponent ? (
               <SelectedProjectComponent />
