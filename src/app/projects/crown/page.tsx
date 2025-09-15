@@ -102,27 +102,41 @@ export default function Crown() {
         <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
           Features
         </span>
-        <ul className="list-disc list-inside px-4 py-4 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
-          <li>JWT Authentication</li>
-          <li>Multiple Hair Profile Support</li>
-          <li>Hair Profile Creation Quiz</li>
-          <li>Hair Product Recommendation Engine</li>
+        <ul className="list-disc list-outside pl-8 p-4 py-4 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
+          <li className="pl-2">JWT Authentication</li>
+          <li className="pl-2 mt-2">Multiple Hair Profile Support</li>
+          <li className="pl-2 mt-2">Hair Profile Creation Quiz</li>
+          <li className="pl-2 mt-2">Hair Product Recommendation Engine</li>
+        </ul>
+      </div>
+      <div className="w-full flex flex-col gap-2">
+        <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
+          What I learned
+        </span>
+        <ul className="list-disc list-outside pl-8 p-4 py-4 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
+          <li className="pl-2">
+            How to build a cross-platform mobile app with React Native (Expo
+            Framework)
+          </li>
+          <li className="pl-2 mt-2">
+            How to build a REST API with <span>Go</span> using Gin web framework
+          </li>
+          <li className="pl-2 mt-2">
+            How to design and implement a responsive and streamlined user
+            interface on mobile
+          </li>
+          <li className="pl-2 mt-2">
+            How to leverage OpenAI API to build a recommendation engine
+          </li>
+          <li className="pl-2 mt-2">
+            How to containerize a web server using Docker, and then deploying
+            the docker-image to deploy on a cloud-host (Railway)
+          </li>
         </ul>
       </div>
       <div className="w-full flex flex-col gap-2">
         <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
           Showcase
-        </span>
-        {/* <ul className="list-disc list-inside px-4 py-4 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
-          <li>JWT Authentication</li>
-          <li>Multiple Hair Profile Support</li>
-          <li>Hair Profile Creation Quiz</li>
-          <li>Hair Product Recommendation Engine</li>
-        </ul> */}
-      </div>
-      <div className="w-full flex flex-col gap-2">
-        <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
-          Frequently Asked Questions
         </span>
         {/* <ul className="list-disc list-inside px-4 py-4 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
           <li>JWT Authentication</li>
