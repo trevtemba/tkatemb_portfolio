@@ -8,10 +8,10 @@ export const Navbar: React.FC = () => {
   const pathName = usePathname();
 
   const navItems = [
-    { href: "/", icon: "/icons/home.svg", alt: "Home" },
-    { href: "/projects", icon: "/icons/projects.svg", alt: "Projects" },
-    { href: "/experience", icon: "/icons/experience.svg", alt: "Experience" },
-    { href: "/contact", icon: "/icons/contact.svg", alt: "Contact" },
+    { href: "/", icon: "/icons/homeicon.svg", alt: "Home" },
+    { href: "/projects", icon: "/icons/projicon.svg", alt: "Projects" },
+    { href: "/experience", icon: "/icons/workicon.svg", alt: "Experience" },
+    { href: "/contact", icon: "/icons/personal.svg", alt: "Contact" },
   ];
 
   const positions = ["1%", "25%", "50%", "74%"]; // left offsets for each navbutton
