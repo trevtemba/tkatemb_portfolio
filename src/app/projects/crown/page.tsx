@@ -9,25 +9,29 @@ export default function Crown() {
     icon: "/icons/crownlogo.png",
     github: "https://github.com/camscott16/Crown",
     video: undefined,
+    images: [
+      "/projectImages/crown/prev1.jpg",
+      "/projectImages/crown/prev2.jpg",
+      "/projectImages/crown/prev3.jpg",
+      "/projectImages/crown/prev4.jpg",
+    ],
   };
   return (
     <div className="flex flex-col gap-2">
       <div className="w-full flex flex-row gap-4">
         <div className="flex w-full justify-between items-stretch gap-4">
           {/*  Image */}
-          <div className="flex-[2] flex flex-col items-center flex-shrink-0">
-            <div className="w-26 h-26 sm:w-32 sm:h-32 shrink-0 rounded-2xl bg-neutral-700 shadow-lg flex items-center justify-center border border-neutral-100/15">
-              <Image
-                src={projectData.icon}
-                alt="Profile"
-                width={96}
-                height={96}
-                className="rounded-xl object-cover"
-              />
-            </div>
+          <div className="flex-[3] shrink-0 rounded-lg flex items-center justify-center">
+            <Image
+              src={projectData.icon}
+              alt="Profile"
+              width={128}
+              height={128}
+              className="rounded-md object-cover"
+            />
           </div>
           {/* Details */}
-          <div className="flex-[8] h-26 flex flex-col justify-between">
+          <div className="flex-[7] flex flex-col justify-between">
             {/* Bio section */}
             <div className="flex flex-col">
               <h1 className="text-white text-2xl text-left font-bold">
@@ -69,7 +73,7 @@ export default function Crown() {
                 rel="noopener noreferrer"
                 className="flex flex-row justify-between bg-neutral-700 hover:bg-neutral-700/80 text-white text-sm font-medium px-4 py-2 border border-gray-600 rounded-sm shadow transition gap-2"
               >
-                Video Demo
+                Vid Demo
                 <Image
                   src="/icons/newtab.svg"
                   alt="Link"
@@ -86,7 +90,7 @@ export default function Crown() {
         <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
           Description
         </span>
-        <div className="flex flex-col gap-2 px-4 py-4 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
+        <div className="flex flex-col gap-2 px-6 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
           <p>
             An IOS/Android app that recommends hair-care products to users based
             on their curated "Hair Profile".
@@ -102,7 +106,7 @@ export default function Crown() {
         <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
           Features
         </span>
-        <ul className="list-disc list-outside pl-8 p-4 py-4 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
+        <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
           <li className="pl-2">JWT Authentication</li>
           <li className="pl-2 mt-2">Multiple Hair Profile Support</li>
           <li className="pl-2 mt-2">Hair Profile Creation Quiz</li>
@@ -111,9 +115,9 @@ export default function Crown() {
       </div>
       <div className="w-full flex flex-col gap-2">
         <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
-          What I learned
+          What I Learned
         </span>
-        <ul className="list-disc list-outside pl-8 p-4 py-4 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
+        <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
           <li className="pl-2">
             How to build a cross-platform mobile app with React Native (Expo
             Framework)
@@ -136,14 +140,38 @@ export default function Crown() {
       </div>
       <div className="w-full flex flex-col gap-2">
         <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
+          What's Next?
+        </span>
+        <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
+          <li className="pl-2 mt-2">
+            Fetch product data (images, price, links) to better display
+            recommendation results
+          </li>
+          <li className="pl-2 mt-2">
+            Develop amazon affiliate link generator for each recommended product
+          </li>
+          <li className="pl-2 mt-2">User interface overhaul</li>
+        </ul>
+      </div>
+      <div className="w-full flex flex-col gap-2">
+        <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
           Showcase
         </span>
-        {/* <ul className="list-disc list-inside px-4 py-4 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
-          <li>JWT Authentication</li>
-          <li>Multiple Hair Profile Support</li>
-          <li>Hair Profile Creation Quiz</li>
-          <li>Hair Product Recommendation Engine</li>
-        </ul> */}
+        <div className="flex flex-col w-full px-4 py-4 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-3xl gap-4">
+          {projectData.images.map((src, index) => (
+            <div
+              key={index}
+              className="relative w-full aspect-1/2 rounded-2xl overflow-hidden"
+            >
+              <Image
+                src={src}
+                alt={`Preview ${index}`}
+                fill
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
