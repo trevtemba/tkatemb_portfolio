@@ -1,6 +1,44 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Experience() {
+  const workExperience = [
+    {
+      name: "Accenture",
+      role: "IX Analyst",
+      icon: "/icons/accenturelogo.png",
+      duration: ["Fall '23", "Spring '23", "Summer '24"],
+      description: [
+        "First desc point...",
+        "Second desc point...",
+        "Third desc point...",
+      ],
+    },
+    {
+      name: "TD Synnex",
+      role: "Software Engineer (Capstone)",
+      icon: "/icons/tdsynnex.png",
+      duration: ["Fall '25"],
+      description: [
+        "First desc point...",
+        "Second desc point...",
+        "Third desc point...",
+      ],
+    },
+  ];
+
+  const education = [
+    {
+      institution: "Clemson",
+      degree: "Computer Science (B.S.) | AI",
+      icon: "/icons/clemsonlogo.jpg",
+    },
+  ];
+
+  const [activeMoreInfos, setActiveMoreInfos] = useState<number | null>(null);
+
   return (
     <main className="flex justify-center mt-24">
       <div
@@ -22,93 +60,106 @@ export default function Experience() {
         {/* Top section: image + name/title */}
         <div className="flex flex-col w-full justify-between mt-2 mb-4 items-stretch gap-2 px-5 py-2">
           {/* Experience card */}
-          <div className="flex w-full justify-between items-stretch gap-4 px-4 py-4 bg-neutral-900/50 border border-neutral-700 shadow rounded-xl">
-            {/* Seconde half */}
-            <div className="flex-[3] flex flex-col items-center flex-shrink-0">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 p-2 shadow-lg flex items-center justify-center border border-neutral-100/15">
-                <Image
-                  src="/icons/accenturelogo.png"
-                  alt="Profile"
-                  width={96}
-                  height={96}
-                  className="rounded-lg object-cover"
-                />
-              </div>
-            </div>
-            {/* First half */}
-            <div className="flex-[7] flex flex-col justify-between">
-              <h1 className="text-white text-2xl font-bold">Accenture</h1>
+          {workExperience.map(
+            ({ name, role, icon, duration, description }, index) => (
+              <div
+                key={index}
+                className="flex flex-col w-full items-stretch gap-4 px-4 py-4 bg-neutral-900/50 border border-neutral-700 shadow rounded-xl"
+              >
+                <div className="flex flex-row w-full justify-between items-stretch gap-4 bg-neutral-900/50">
+                  {/* Seconde half */}
+                  <div className="flex-[2] flex flex-col items-start flex-shrink-0">
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 shadow-lg flex items-center justify-center border border-neutral-100/15">
+                      <Image
+                        src={icon}
+                        alt="Profile"
+                        width={96}
+                        height={96}
+                        className="rounded-lg object-cover"
+                      />
+                    </div>
+                  </div>
+                  {/* First half */}
+                  <div className="flex-[7] flex flex-col justify-between">
+                    <h1 className="text-white text-2xl font-bold">{name}</h1>
 
-              {/* Bio section */}
-              <div className="flex flex-row gap-1.5">
-                <Image
-                  src="/icons/role.svg"
-                  alt="Link"
-                  width={12}
-                  height={12}
-                  className="brightness-60"
-                />
-                <h2 className="text-gray-300/80 font-normal text-left text-sm">
-                  Data Analyst (Co-op)
-                </h2>
+                    {/* Bio section */}
+                    <div className="flex flex-row gap-1.5">
+                      <Image
+                        src="/icons/role.svg"
+                        alt="Link"
+                        width={12}
+                        height={12}
+                        className="brightness-60"
+                      />
+                      <h2 className="text-gray-300/80 font-normal text-left text-sm">
+                        {role}
+                      </h2>
+                    </div>
+                    {/* Bio section */}
+                    <button
+                      className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg"
+                      onClick={() => setActiveMoreInfos(index)}
+                    >
+                      More Information
+                      <Image
+                        src="/icons/arrowdown.svg"
+                        alt="Link"
+                        width={12}
+                        height={12}
+                        className="brightness-60"
+                      />
+                    </button>
+                  </div>
+                </div>
+                {activeMoreInfos === index && (
+                  <div className="flex flex-col gap-4 px-4 py-2 bg-neutral-900 rounded-lg">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex flex-row gap-2">
+                        <Image
+                          src="/icons/time.svg"
+                          alt="Link"
+                          width={12}
+                          height={12}
+                          className="brightness-60"
+                        />
+                        <span>Duration</span>
+                      </div>
+                      <div className="flex flex-row gap-2">
+                        {duration.map((date, index) => (
+                          <span
+                            key={index}
+                            className="px-4 py-1 bg-neutral-950 rounded-full"
+                          >
+                            {date}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex flex-row gap-2">
+                        <Image
+                          src="/icons/experience.svg"
+                          alt="Link"
+                          width={12}
+                          height={12}
+                          className="brightness-60"
+                        />
+                        <span>Description</span>
+                      </div>
+                      <ul className="list-disc list-outside px-4 tracking-widest text-neutral-200 text-sm rounded-lg">
+                        {description.map((desc, index) => (
+                          <li key={index} className="pl-1">
+                            {desc}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
-              {/* Bio section */}
-              <button className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg">
-                More Information
-                <Image
-                  src="/icons/arrowdown.svg"
-                  alt="Link"
-                  width={12}
-                  height={12}
-                  className="brightness-60"
-                />
-              </button>
-            </div>
-          </div>
-          {/* Experience card */}
-          <div className="flex w-full justify-between items-stretch gap-4 px-4 py-4 bg-neutral-900/50 border border-neutral-700 shadow rounded-xl">
-            {/* Seconde half */}
-            <div className="flex-[3] flex flex-col items-center flex-shrink-0">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 p-2 shadow-lg flex items-center justify-center border border-neutral-100/15">
-                <Image
-                  src="/icons/tdsynnex.png"
-                  alt="Profile"
-                  width={96}
-                  height={96}
-                  className="rounded-lg object-cover"
-                />
-              </div>
-            </div>
-            {/* First half */}
-            <div className="flex-[7] flex flex-col justify-between">
-              <h1 className="text-white text-2xl font-bold">TD Synnex</h1>
-
-              {/* Bio section */}
-              <div className="flex flex-row gap-1.5">
-                <Image
-                  src="/icons/role.svg"
-                  alt="Link"
-                  width={12}
-                  height={12}
-                  className="brightness-60"
-                />
-                <h2 className="text-gray-300/80 font-normal text-left text-sm">
-                  Software Engineer (Capstone)
-                </h2>
-              </div>
-              {/* Bio section */}
-              <button className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg">
-                More Information
-                <Image
-                  src="/icons/arrowdown.svg"
-                  alt="Link"
-                  width={12}
-                  height={12}
-                  className="brightness-60"
-                />
-              </button>
-            </div>
-          </div>
+            ),
+          )}
         </div>
         {/* Name and title */}
         <div className="w-full flex justify-between items-center px-5">
@@ -120,48 +171,54 @@ export default function Experience() {
         {/* Top section: image + name/title */}
         <div className="flex flex-col w-full justify-between mt-2 mb-4 items-stretch gap-2 px-5 py-2">
           {/* Experience card */}
-          <div className="flex w-full justify-between items-stretch gap-4 px-4 py-4 bg-neutral-900/50 border border-neutral-700 shadow rounded-xl">
-            {/* Seconde half */}
-            <div className="flex-[3] flex flex-col items-center flex-shrink-0">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 p-2 shadow-lg flex items-center justify-center border border-neutral-100/15">
-                <Image
-                  src="/icons/clemsonlogo.jpg"
-                  alt="Profile"
-                  width={96}
-                  height={96}
-                  className="rounded-lg object-cover"
-                />
+          {education.map(({ institution, degree, icon }, index) => (
+            <div
+              key={index}
+              className="flex w-full justify-between items-stretch gap-4 px-4 py-4 bg-neutral-900/50 border border-neutral-700 shadow rounded-xl"
+            >
+              {/* Seconde half */}
+              <div className="flex-[3] flex flex-col items-center flex-shrink-0">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 p-2 shadow-lg flex items-center justify-center border border-neutral-100/15">
+                  <Image
+                    src={icon}
+                    alt="Profile"
+                    width={96}
+                    height={96}
+                    className="rounded-lg object-cover"
+                  />
+                </div>
+              </div>
+              {/* First half */}
+              <div className="flex-[7] flex flex-col justify-between">
+                <h1 className="text-white text-2xl font-bold">{institution}</h1>
+
+                {/* Bio section */}
+                <div className="flex flex-row gap-1.5">
+                  <Image
+                    src="/icons/role.svg"
+                    alt="Link"
+                    width={12}
+                    height={12}
+                    className="brightness-60"
+                  />
+                  <h2 className="text-gray-300/80 font-normal text-left text-sm">
+                    {degree}
+                  </h2>
+                </div>
+                {/* Bio section */}
+                <button className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg">
+                  More Information
+                  <Image
+                    src="/icons/arrowdown.svg"
+                    alt="Link"
+                    width={12}
+                    height={12}
+                    className="brightness-60"
+                  />
+                </button>
               </div>
             </div>
-            {/* First half */}
-            <div className="flex-[7] flex flex-col justify-between">
-              <h1 className="text-white text-2xl font-bold">Clemson</h1>
-              {/* Bio section */}
-              <div className="flex flex-row gap-1.5">
-                <Image
-                  src="/icons/educationlogo.svg"
-                  alt="Link"
-                  width={12}
-                  height={12}
-                  className="brightness-60"
-                />
-                <h2 className="text-gray-300/80 font-normal text-left text-sm">
-                  Computer Science (B.S) | AI
-                </h2>
-              </div>
-              {/* Bio section */}
-              <button className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg">
-                More Information
-                <Image
-                  src="/icons/arrowdown.svg"
-                  alt="Link"
-                  width={12}
-                  height={12}
-                  className="brightness-60"
-                />
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
         {/* RELEVANT SKILLS */}
         <div className="w-full flex flex-col bg-neutral-700/40 rounded-2xl py-5 px-5 gap-4">
