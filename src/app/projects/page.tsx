@@ -4,6 +4,7 @@ import { spawn } from "child_process";
 import Image from "next/image";
 import { Component, useState } from "react";
 import Crown from "./crown/page";
+import SoulFighters from "./soulfighters/page";
 
 export default function Projects() {
   const projects = [
@@ -21,6 +22,7 @@ export default function Projects() {
       desc: "Round-based fighting game",
       tags: ["Lua (Luau)", "Blender"],
       icon: "/icons/explosionlabs.png",
+      comp: SoulFighters,
     },
     {
       name: "SFX Mapper",
@@ -153,17 +155,6 @@ export default function Projects() {
         )}
         {selectedProject && (
           <div className="w-full flex flex-col rounded-2xl py-4 px-5 gap-6">
-            {/* Header */}
-            <div className="w-full flex justify-between items-center">
-              <div className="flex items-center">
-                <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
-                <span className="text-gray-300/80">Project Info</span>
-              </div>
-              <div className="flex flex-row items-center bg-green-900/40 text-white gap-2 rounded-full px-4 py-0.5">
-                <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-                <span className="text-green-600 text-sm">Alpha</span>
-              </div>
-            </div>
             {SelectedProjectComponent ? (
               <SelectedProjectComponent />
             ) : (

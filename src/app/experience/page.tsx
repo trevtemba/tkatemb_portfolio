@@ -94,7 +94,7 @@ export default function Experience() {
                 <div className="flex flex-row w-full justify-between items-stretch gap-4 bg-neutral-900/50">
                   {/* Seconde half */}
                   <div className="flex-[2] flex flex-col items-start flex-shrink-0">
-                    <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 shadow-lg flex items-center justify-center border border-neutral-100/15">
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 shadow-lg flex items-center justify-center">
                       <Image
                         src={icon}
                         alt="Profile"
@@ -123,7 +123,7 @@ export default function Experience() {
                     </div>
                     {/* Bio section */}
                     <button
-                      className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg"
+                      className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 shadow px-4 py-2 rounded-lg"
                       onClick={() => handleActiveMoreInfo(index)}
                     >
                       More Information
@@ -227,7 +227,7 @@ export default function Experience() {
                 <div className="flex flex-row w-full justify-between items-stretch gap-4 bg-neutral-900/50">
                   {/* Seconde half */}
                   <div className="flex-[2] flex flex-col items-start flex-shrink-0">
-                    <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 shadow-lg flex items-center justify-center border border-neutral-100/15">
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 shadow-lg flex items-center justify-center">
                       <Image
                         src={icon}
                         alt="Profile"
@@ -258,7 +258,7 @@ export default function Experience() {
                     </div>
                     {/* Bio section */}
                     <button
-                      className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg"
+                      className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50  shadow px-4 py-2 rounded-lg"
                       onClick={() => handleActiveMoreInfo(index + 10)}
                     >
                       More Information

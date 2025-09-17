@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-export default function Crown() {
+export default function SoulFighters() {
   const projectData = {
-    name: "Crown",
+    name: "Soul Fighters",
     role: "Lead Developer",
     desc: "Hair product recommendation mobile app",
     tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
-    icon: "/icons/crownlogo.png",
-    github: "https://github.com/camscott16/Crown",
-    state: "Alpha",
+    icon: "/icons/explosionlabs.png",
+    github: "https://github.com/trevtemba/ArenaFightingGame",
+    state: "In-Development",
     video: undefined,
     images: [
       "/projectImages/crown/prev1.jpg",
@@ -24,9 +24,9 @@ export default function Crown() {
           <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
           <span className="text-gray-300/80">Project Info</span>
         </div>
-        <div className="flex flex-row items-center bg-green-900/40 text-white gap-2 rounded-full px-4 py-0.5">
-          <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-          <span className="text-green-600 text-sm">{projectData.state}</span>
+        <div className="flex flex-row items-center bg-blue-900/40 text-white gap-2 rounded-full px-4 py-0.5">
+          <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
+          <span className="text-cyan-600 text-sm">{projectData.state}</span>
         </div>
       </div>
       <div className="flex flex-col gap-2">
@@ -104,13 +104,16 @@ export default function Crown() {
           </span>
           <div className="flex flex-col gap-2 px-6 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <p>
-              An IOS/Android app that recommends hair-care products to users
-              based on their curated "Hair Profile".
+              A Roblox game that combines the chaotic and competitive
+              environment of an arena fighter with the strategic and economic
+              elements of a round-based autobattler.
             </p>
             <p>
-              <span>Crown's</span> purpose is to educate users on effective hair
-              maintenance while streamlining the process of selecting
-              personalized products and care routines.
+              <span>Soul fighters</span> is a culmination of the aforementioned
+              game genres that aims to provide players with an experience that
+              requires them to not only master in-game combat mechanics, but
+              also outplay their opponents with good economy and champion
+              builing strategy
             </p>
           </div>
         </div>
@@ -119,35 +122,45 @@ export default function Crown() {
             Features
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
-            <li className="pl-2">JWT Authentication</li>
-            <li className="pl-2 mt-2">Multiple Hair Profile Support</li>
-            <li className="pl-2 mt-2">Hair Profile Creation Quiz</li>
-            <li className="pl-2 mt-2">Hair Product Recommendation Engine</li>
+            <li className="pl-2 mt-2">
+              Modular entity framework for handling players, enemies, and dummy
+              entities (OOP)
+            </li>
+            <li className="pl-2 mt-2">Combat/Movement system</li>
+            <li className="pl-2 mt-2">
+              Teir-based loot drop system that supports component drops/gold
+              drops
+            </li>
+            <li className="pl-2 mt-2">AI enemy system</li>
+            <li className="pl-2 mt-2">
+              Champion models, skeleton HUD, animations, VFX, and SFX
+            </li>
           </ul>
         </div>
         <div className="w-full flex flex-col gap-2">
           <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
-            What I Learned
+            What I'm Learning
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2">
-              How to build a cross-platform mobile app with React Native (Expo
-              Framework)
+              How to design and build a scalable object-oriented system in a
+              game context
             </li>
             <li className="pl-2 mt-2">
-              How to build a REST API with <span>Go</span> using Gin web
-              framework
+              How to optimize client-server communication by condensing data
+              sent between server and client
             </li>
             <li className="pl-2 mt-2">
-              How to design and implement a responsive and streamlined user
-              interface on mobile
+              How to delegate heavy-tasks such as physics simulations/animation
+              handling/effect rendering to client rather than server.
             </li>
             <li className="pl-2 mt-2">
-              How to leverage OpenAI API to build a recommendation engine
+              How to design and implement game-loops that incentivize players to
+              continue playing
             </li>
             <li className="pl-2 mt-2">
-              How to containerize a web server using Docker, and then deploying
-              the docker-image to deploy on a cloud-host (Railway)
+              How to initiate end-user testing and translating feedback into
+              feature addage/refinement
             </li>
           </ul>
         </div>
@@ -157,14 +170,16 @@ export default function Crown() {
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2 mt-2">
-              Fetch product data (images, price, links) to better display
-              recommendation results
+              Programming in-game logic for all loot drops.
             </li>
             <li className="pl-2 mt-2">
-              Develop amazon affiliate link generator for each recommended
-              product
+              Adding augment rounds (player can choose between 3 power-ups for
+              the remainder of the game)
             </li>
-            <li className="pl-2 mt-2">User interface overhaul</li>
+            <li className="pl-2 mt-2">
+              Adding carousel rounds (players compete with other to obtain
+              various in-game loot)
+            </li>
           </ul>
         </div>
         <div className="w-full flex flex-col gap-2">
