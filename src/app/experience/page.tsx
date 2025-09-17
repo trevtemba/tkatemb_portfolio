@@ -11,9 +11,16 @@ export default function Experience() {
       icon: "/icons/accenturelogo.png",
       duration: ["Fall '23", "Spring '23", "Summer '24"],
       description: [
-        "First desc point...",
-        "Second desc point...",
-        "Third desc point...",
+        "Wrote Oracle SQL scripts to create custom database rules and manipulations within client's EAM environments.",
+        "Designed & implemented a data-pipeline (using Infor ION) that fetched client vehicle data (via REST API), spliced and converted the data into XML BODs, and then imported the BODs into the client's EAM environment.",
+        "Built a dashboard & KPI with Microsoft PowerBI that displayed cloudwatch error logs and tracked the error count per business day.",
+      ],
+      technologies: [
+        "Oracle SQL",
+        "PowerBI",
+        "Infor Ion",
+        "HxGN EAM",
+        "Javascript",
       ],
     },
     {
@@ -22,10 +29,11 @@ export default function Experience() {
       icon: "/icons/tdsynnex.png",
       duration: ["Fall '25"],
       description: [
-        "First desc point...",
-        "Second desc point...",
-        "Third desc point...",
+        "Evaluating functionality of GONG to develop strategy for presenting its output data blobs in PowerBI dashboard, using Microsoft AI tools.",
+        "Audit TD Synnex's NexChat AI chatbot to determine refinements to its image-data ingestion",
+        "Measure time and resources saved via chatbot interactions and internal-client response quality. ",
       ],
+      technologies: ["GONG", "Azure AI Foundry", "NexChat", "PowerBI"],
     },
   ];
 
@@ -34,6 +42,12 @@ export default function Experience() {
       institution: "Clemson",
       degree: "Computer Science (B.S.) | AI",
       icon: "/icons/clemsonlogo.jpg",
+      duration: ["May 2026"],
+      cousework: [
+        "Evaluating functionality of GONG to develop strategy for presenting its output data blobs in PowerBI dashboard, using Microsoft AI tools.",
+        "Audit TD Synnex's NexChat AI chatbot to determine refinements to its image-data ingestion",
+        "Measure time and resources saved via chatbot interactions and internal-client response quality. ",
+      ],
     },
   ];
 
@@ -61,7 +75,10 @@ export default function Experience() {
         <div className="flex flex-col w-full justify-between mt-2 mb-4 items-stretch gap-2 px-5 py-2">
           {/* Experience card */}
           {workExperience.map(
-            ({ name, role, icon, duration, description }, index) => (
+            (
+              { name, role, icon, duration, description, technologies },
+              index,
+            ) => (
               <div
                 key={index}
                 className="flex flex-col w-full items-stretch gap-4 px-4 py-4 bg-neutral-900/50 border border-neutral-700 shadow rounded-xl"
@@ -113,7 +130,7 @@ export default function Experience() {
                   </div>
                 </div>
                 {activeMoreInfos === index && (
-                  <div className="flex flex-col gap-4 px-4 py-2 bg-neutral-900 rounded-lg">
+                  <div className="flex flex-col gap-4 px-4 py-4 bg-neutral-900/80 rounded-lg">
                     <div className="flex flex-col gap-2">
                       <div className="flex flex-row gap-2">
                         <Image
@@ -136,10 +153,10 @@ export default function Experience() {
                         ))}
                       </div>
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col pb-2">
                       <div className="flex flex-row gap-2">
                         <Image
-                          src="/icons/experience.svg"
+                          src="/icons/workicon.svg"
                           alt="Link"
                           width={12}
                           height={12}
@@ -149,11 +166,33 @@ export default function Experience() {
                       </div>
                       <ul className="list-disc list-outside px-4 tracking-widest text-neutral-200 text-sm rounded-lg">
                         {description.map((desc, index) => (
-                          <li key={index} className="pl-1">
+                          <li key={index} className="pl-1 pt-2">
                             {desc}
                           </li>
                         ))}
                       </ul>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <div className="flex flex-row gap-2">
+                        <Image
+                          src="/icons/developer.svg"
+                          alt="Link"
+                          width={12}
+                          height={12}
+                          className="brightness-60"
+                        />
+                        <span>Technologies Used</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {technologies.map((technology, index) => (
+                          <span
+                            key={index}
+                            className="px-4 py-1 bg-neutral-950 rounded-full"
+                          >
+                            {technology}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -171,54 +210,108 @@ export default function Experience() {
         {/* Top section: image + name/title */}
         <div className="flex flex-col w-full justify-between mt-2 mb-4 items-stretch gap-2 px-5 py-2">
           {/* Experience card */}
-          {education.map(({ institution, degree, icon }, index) => (
-            <div
-              key={index}
-              className="flex w-full justify-between items-stretch gap-4 px-4 py-4 bg-neutral-900/50 border border-neutral-700 shadow rounded-xl"
-            >
-              {/* Seconde half */}
-              <div className="flex-[3] flex flex-col items-center flex-shrink-0">
-                <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 p-2 shadow-lg flex items-center justify-center border border-neutral-100/15">
-                  <Image
-                    src={icon}
-                    alt="Profile"
-                    width={96}
-                    height={96}
-                    className="rounded-lg object-cover"
-                  />
-                </div>
-              </div>
-              {/* First half */}
-              <div className="flex-[7] flex flex-col justify-between">
-                <h1 className="text-white text-2xl font-bold">{institution}</h1>
+          {education.map(
+            ({ institution, degree, icon, duration, cousework }, index) => (
+              <div
+                key={index}
+                className="flex flex-col w-full items-stretch gap-4 px-4 py-4 bg-neutral-900/50 border border-neutral-700 shadow rounded-xl"
+              >
+                <div className="flex flex-row w-full justify-between items-stretch gap-4 bg-neutral-900/50">
+                  {/* Seconde half */}
+                  <div className="flex-[2] flex flex-col items-start flex-shrink-0">
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-xl bg-neutral-700/20 shadow-lg flex items-center justify-center border border-neutral-100/15">
+                      <Image
+                        src={icon}
+                        alt="Profile"
+                        width={96}
+                        height={96}
+                        className="rounded-lg object-cover"
+                      />
+                    </div>
+                  </div>
+                  {/* First half */}
+                  <div className="flex-[7] flex flex-col justify-between">
+                    <h1 className="text-white text-2xl font-bold">
+                      {institution}
+                    </h1>
 
-                {/* Bio section */}
-                <div className="flex flex-row gap-1.5">
-                  <Image
-                    src="/icons/role.svg"
-                    alt="Link"
-                    width={12}
-                    height={12}
-                    className="brightness-60"
-                  />
-                  <h2 className="text-gray-300/80 font-normal text-left text-sm">
-                    {degree}
-                  </h2>
+                    {/* Bio section */}
+                    <div className="flex flex-row gap-1.5">
+                      <Image
+                        src="/icons/role.svg"
+                        alt="Link"
+                        width={12}
+                        height={12}
+                        className="brightness-60"
+                      />
+                      <h2 className="text-gray-300/80 font-normal text-left text-sm">
+                        {degree}
+                      </h2>
+                    </div>
+                    {/* Bio section */}
+                    <button
+                      className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg"
+                      onClick={() => setActiveMoreInfos(index)}
+                    >
+                      More Information
+                      <Image
+                        src="/icons/arrowdown.svg"
+                        alt="Link"
+                        width={12}
+                        height={12}
+                        className="brightness-60"
+                      />
+                    </button>
+                  </div>
                 </div>
-                {/* Bio section */}
-                <button className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg">
-                  More Information
-                  <Image
-                    src="/icons/arrowdown.svg"
-                    alt="Link"
-                    width={12}
-                    height={12}
-                    className="brightness-60"
-                  />
-                </button>
+                {activeMoreInfos === index && (
+                  <div className="flex flex-col gap-4 px-4 py-4 bg-neutral-900/80 rounded-lg">
+                    <div className="flex flex-col gap-2">
+                      <div className="flex flex-row gap-2">
+                        <Image
+                          src="/icons/time.svg"
+                          alt="Link"
+                          width={12}
+                          height={12}
+                          className="brightness-60"
+                        />
+                        <span>Graduation Date</span>
+                      </div>
+                      <div className="flex flex-row gap-2">
+                        {duration.map((date, index) => (
+                          <span
+                            key={index}
+                            className="px-4 py-1 bg-neutral-950 rounded-full"
+                          >
+                            {date}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="flex flex-col pb-2">
+                      <div className="flex flex-row gap-2">
+                        <Image
+                          src="/icons/workicon.svg"
+                          alt="Link"
+                          width={12}
+                          height={12}
+                          className="brightness-60"
+                        />
+                        <span>Interesting Coursework</span>
+                      </div>
+                      <ul className="list-disc list-outside px-4 tracking-widest text-neutral-200 text-sm rounded-lg">
+                        {cousework.map((course, index) => (
+                          <li key={index} className="pl-1 pt-2">
+                            {course}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            ),
+          )}
         </div>
         {/* RELEVANT SKILLS */}
         <div className="w-full flex flex-col bg-neutral-700/40 rounded-2xl py-5 px-5 gap-4">
