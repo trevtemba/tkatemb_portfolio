@@ -43,16 +43,24 @@ export default function Experience() {
       degree: "Computer Science (B.S.) | AI",
       icon: "/icons/clemsonlogo.jpg",
       duration: ["May 2026"],
-      cousework: [
-        "Evaluating functionality of GONG to develop strategy for presenting its output data blobs in PowerBI dashboard, using Microsoft AI tools.",
-        "Audit TD Synnex's NexChat AI chatbot to determine refinements to its image-data ingestion",
-        "Measure time and resources saved via chatbot interactions and internal-client response quality. ",
-      ],
+      cousework: {
+        "Cloud Computing":
+          "Extensively learning cloud architecture on AWS through hands-on labs",
+        "Artificial Intelligence":
+          "Game-based projets that applied reinforcement learning and Markov decision processes",
+        "Machine Learning":
+          "Learning practical techniques to train and test ML models using Python",
+      },
     },
   ];
 
   const [activeMoreInfos, setActiveMoreInfos] = useState<number | null>(null);
 
+  const handleActiveMoreInfo = (index: number) => {
+    if (activeMoreInfos === index) {
+      setActiveMoreInfos(null);
+    } else setActiveMoreInfos(index);
+  };
   return (
     <main className="flex justify-center mt-24">
       <div
@@ -116,7 +124,7 @@ export default function Experience() {
                     {/* Bio section */}
                     <button
                       className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg"
-                      onClick={() => setActiveMoreInfos(index)}
+                      onClick={() => handleActiveMoreInfo(index)}
                     >
                       More Information
                       <Image
@@ -251,7 +259,7 @@ export default function Experience() {
                     {/* Bio section */}
                     <button
                       className="flex flex-row justify-between text-neutral-300 text-sm bg-neutral-950 hover:bg-neutral-950/50 border border-neutral-700/80 shadow px-4 py-2 rounded-lg"
-                      onClick={() => setActiveMoreInfos(index)}
+                      onClick={() => handleActiveMoreInfo(index + 10)}
                     >
                       More Information
                       <Image
@@ -264,7 +272,7 @@ export default function Experience() {
                     </button>
                   </div>
                 </div>
-                {activeMoreInfos === index && (
+                {activeMoreInfos === index + 10 && (
                   <div className="flex flex-col gap-4 px-4 py-4 bg-neutral-900/80 rounded-lg">
                     <div className="flex flex-col gap-2">
                       <div className="flex flex-row gap-2">
@@ -300,11 +308,17 @@ export default function Experience() {
                         <span>Interesting Coursework</span>
                       </div>
                       <ul className="list-disc list-outside px-4 tracking-widest text-neutral-200 text-sm rounded-lg">
-                        {cousework.map((course, index) => (
-                          <li key={index} className="pl-1 pt-2">
-                            {course}
-                          </li>
-                        ))}
+                        {Object.entries(cousework).map(
+                          ([course, desc], index) => (
+                            <li key={index} className="pl-1 pt-2">
+                              <span className="italic font-bold">
+                                {course}:{" "}
+                              </span>
+
+                              <span className="">{desc}</span>
+                            </li>
+                          ),
+                        )}
                       </ul>
                     </div>
                   </div>
