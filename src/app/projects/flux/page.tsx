@@ -1,14 +1,14 @@
 import Image from "next/image";
 
-export default function SoulFighters() {
+export default function Flux() {
   const projectData = {
-    name: "Soul Fighters",
+    name: "Flux",
     role: "Lead Developer",
-    desc: "Hair product recommendation mobile app",
-    tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
-    icon: "/icons/explosionlabs.png",
-    github: "https://github.com/trevtemba/ArenaFightingGame",
-    state: "In-Development",
+    desc: "CLI Application that gives timings for basic sound effects based on BPM",
+    tags: ["Go"],
+    icon: "/icons/fluxicon.png",
+    github: "https://github.com/trevtemba/bpm-effects-timings",
+    state: "Beta",
     video: undefined,
     images: [
       "/projectImages/crown/prev1.jpg",
@@ -24,9 +24,9 @@ export default function SoulFighters() {
           <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
           <span className="text-gray-300/80">Project Info</span>
         </div>
-        <div className="flex flex-row items-center bg-blue-900/40 text-white gap-2 rounded-full px-4 py-0.5">
-          <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
-          <span className="text-cyan-600 text-sm">{projectData.state}</span>
+        <div className="flex flex-row items-center bg-green-900/40 text-white gap-2 rounded-full px-4 py-0.5">
+          <div className="w-1 h-1 bg-green-400 rounded-full"></div>
+          <span className="text-green-600 text-sm">{projectData.state}</span>
         </div>
       </div>
       <div className="flex flex-col gap-2">
@@ -104,16 +104,14 @@ export default function SoulFighters() {
           </span>
           <div className="flex flex-col gap-2 px-6 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <p>
-              A Roblox game that combines the chaotic and competitive
-              environment of an arena fighter with the strategic and economic
-              elements of a round-based autobattler.
+              A command-line application that provides on-beat timings in
+              miliseconds.
             </p>
             <p>
-              <span>Soul fighters</span> is a culmination of the aforementioned
-              game genres that aims to provide players with an experience that
-              requires them to not only master in-game combat mechanics, but
-              also outplay their opponents with good economy and champion
-              builing strategy
+              The purpose of Flux is to save music producers time in calculating
+              "on-beat" timings for delays, reverbs, and compressors. I also
+              just wanted to make a very simple application so I could release
+              it on GitHub.
             </p>
           </div>
         </div>
@@ -122,62 +120,23 @@ export default function SoulFighters() {
             Features
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
-            <li className="pl-2 mt-2">
-              Modular entity framework for handling players, enemies, and dummy
-              entities (OOP)
-            </li>
-            <li className="pl-2 mt-2">Combat/Movement system</li>
-            <li className="pl-2 mt-2">
-              Teir-based loot drop system that supports component drops/gold
-              drops
-            </li>
-            <li className="pl-2 mt-2">
-              Training mode that allows player to test combat/movement in a
-              sandbox environment
-            </li>
-            <li className="pl-2 mt-2">AI enemy system</li>
-            <li className="pl-2 mt-2">
-              Champion models, skeleton HUD, animations, VFX, and SFX
+            <li className="pl-2">
+              Accepts BPM input then outputs recommended timings for basic
+              effects.
             </li>
           </ul>
         </div>
         <div className="w-full flex flex-col gap-2">
           <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
-            What I'm Learning
+            What I Learned
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2">
-              How to design and build a scalable object-oriented system in a
-              game context
+              How to build a platform independent CLI application (basic) with
+              Go's standard libary
             </li>
             <li className="pl-2 mt-2">
-              How to optimize client-server communication by condensing data
-              sent between server and client
-            </li>
-            <li className="pl-2 mt-2">
-              How to delegate heavy-tasks such as physics simulations/animation
-              handling/effect rendering to client rather than server
-            </li>
-            <li className="pl-2 mt-2">
-              How to build NPC state machines with simple actions (chasing,
-              attacking, stunned, etc)
-            </li>
-            <li className="pl-2 mt-2">
-              How to simplify complex user and NPC states by delegating state
-              handlers to each of the entities, significantly reducing the time
-              it takes to add new actions/states
-            </li>
-            <li className="pl-2 mt-2">
-              How to design and implement game-loops that incentivize players to
-              continue playing
-            </li>
-            <li className="pl-2 mt-2">
-              How to initiate end-user testing and translating feedback into
-              feature addage/refinement
-            </li>
-            <li>
-              How to use Blender to make various game assets (models,
-              animations, graphics)
+              How to "release" an application on GitHub for Linux/Windows/Mac
             </li>
           </ul>
         </div>
@@ -187,17 +146,18 @@ export default function SoulFighters() {
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2 mt-2">
-              Programming in-game logic for loot types: component anvil, item
-              anvil, artifact anvil.
+              Make Flux automatically read any open DAW (Digital Audio
+              Workstation) processes to retrieve BPM, instead of the user having
+              to manually type it in
             </li>
             <li className="pl-2 mt-2">
-              Adding augment rounds (player can choose between 3 passive
-              abilities for the remainder of the game)
+              Leverage{" "}
+              <a href="https://github.com/spf13/cobra" className="underline">
+                Cobra
+              </a>{" "}
+              library to modernize Flux and make it more extendable
             </li>
-            <li className="pl-2 mt-2">
-              Adding carousel rounds (players race to obtain various in-game
-              loot off a carousel)
-            </li>
+            <li className="pl-2 mt-2">User interface overhaul</li>
           </ul>
         </div>
         <div className="w-full flex flex-col gap-2">

@@ -1,20 +1,22 @@
 import Image from "next/image";
 
-export default function SoulFighters() {
+export default function Neur() {
   const projectData = {
-    name: "Soul Fighters",
+    name: "Neur",
     role: "Lead Developer",
-    desc: "Hair product recommendation mobile app",
-    tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
-    icon: "/icons/explosionlabs.png",
-    github: "https://github.com/trevtemba/ArenaFightingGame",
-    state: "In-Development",
+    desc: "Collegiate Entrepreneur social app",
+    tags: ["Go"],
+    icon: "/icons/neurlogo.png",
+    github: "https://github.com/trevtemba/neur-frontend",
+    state: "Scrapped",
     video: undefined,
     images: [
-      "/projectImages/crown/prev1.jpg",
-      "/projectImages/crown/prev2.jpg",
-      "/projectImages/crown/prev3.jpg",
-      "/projectImages/crown/prev4.jpg",
+      "/projectImages/neur/prev1.png",
+      "/projectImages/neur/prev2.png",
+      "/projectImages/neur/prev3.png",
+      "/projectImages/neur/prev4.png",
+      "/projectImages/neur/prev5.png",
+      "/projectImages/neur/prev6.png",
     ],
   };
   return (
@@ -24,9 +26,9 @@ export default function SoulFighters() {
           <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
           <span className="text-gray-300/80">Project Info</span>
         </div>
-        <div className="flex flex-row items-center bg-blue-900/40 text-white gap-2 rounded-full px-4 py-0.5">
-          <div className="w-1 h-1 bg-blue-400 rounded-full"></div>
-          <span className="text-cyan-600 text-sm">{projectData.state}</span>
+        <div className="flex flex-row items-center bg-red-900/40 text-white gap-2 rounded-full px-4 py-0.5">
+          <div className="w-1 h-1 bg-red-400 rounded-full"></div>
+          <span className="text-red-600 text-sm">{projectData.state}</span>
         </div>
       </div>
       <div className="flex flex-col gap-2">
@@ -104,16 +106,15 @@ export default function SoulFighters() {
           </span>
           <div className="flex flex-col gap-2 px-6 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <p>
-              A Roblox game that combines the chaotic and competitive
-              environment of an arena fighter with the strategic and economic
-              elements of a round-based autobattler.
+              A booking site platform for hair and nail services in college
+              communities
             </p>
             <p>
-              <span>Soul fighters</span> is a culmination of the aforementioned
-              game genres that aims to provide players with an experience that
-              requires them to not only master in-game combat mechanics, but
-              also outplay their opponents with good economy and champion
-              builing strategy
+              The purpose of Neur is to provide a booking platform for college
+              students that wish to sell or purchase hair/nail services. The
+              project is postponed indefinitely, but the idea, design, and
+              learning outcomes are worth sharing, as it's my first fullstack
+              project
             </p>
           </div>
         </div>
@@ -122,62 +123,41 @@ export default function SoulFighters() {
             Features
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
-            <li className="pl-2 mt-2">
-              Modular entity framework for handling players, enemies, and dummy
-              entities (OOP)
+            <li className="pl-2">JWT authentication (Spring Security)</li>
+            <li className="pl-2">
+              Vendor profile actions (creating/modifying/deleting services)
             </li>
-            <li className="pl-2 mt-2">Combat/Movement system</li>
-            <li className="pl-2 mt-2">
-              Teir-based loot drop system that supports component drops/gold
-              drops
+            <li className="pl-2">
+              Rest API that supports basic CRUD operations on vendor data
             </li>
-            <li className="pl-2 mt-2">
-              Training mode that allows player to test combat/movement in a
-              sandbox environment
-            </li>
-            <li className="pl-2 mt-2">AI enemy system</li>
-            <li className="pl-2 mt-2">
-              Champion models, skeleton HUD, animations, VFX, and SFX
+            <li className="pl-2">
+              Rich user interface with minimalistic widgets and animations
             </li>
           </ul>
         </div>
         <div className="w-full flex flex-col gap-2">
           <span className="bg-neutral-900 px-4 py-2 text-center border border-neutral-700/80 shadow rounded-lg tracking-wider">
-            What I'm Learning
+            What I Learned
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2">
-              How to design and build a scalable object-oriented system in a
-              game context
+              How to use Java Spring Boot to build a REST API.
             </li>
             <li className="pl-2 mt-2">
-              How to optimize client-server communication by condensing data
-              sent between server and client
+              How to use Java Database Connectivity (JDBC) to connect to a
+              PostgreSQL database and Hibernate (ORM) to manage entities and
+              perform CRUD operations.
             </li>
             <li className="pl-2 mt-2">
-              How to delegate heavy-tasks such as physics simulations/animation
-              handling/effect rendering to client rather than server
+              How to build a beautiful and interactive front-end with React and
+              CSS.
             </li>
             <li className="pl-2 mt-2">
-              How to build NPC state machines with simple actions (chasing,
-              attacking, stunned, etc)
+              How to containerize a REST API with docker and then deploy the
+              docker image to a cloud hosting platform (Railway)
             </li>
             <li className="pl-2 mt-2">
-              How to simplify complex user and NPC states by delegating state
-              handlers to each of the entities, significantly reducing the time
-              it takes to add new actions/states
-            </li>
-            <li className="pl-2 mt-2">
-              How to design and implement game-loops that incentivize players to
-              continue playing
-            </li>
-            <li className="pl-2 mt-2">
-              How to initiate end-user testing and translating feedback into
-              feature addage/refinement
-            </li>
-            <li>
-              How to use Blender to make various game assets (models,
-              animations, graphics)
+              How to test API endpoints with Postman
             </li>
           </ul>
         </div>
@@ -187,16 +167,14 @@ export default function SoulFighters() {
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2 mt-2">
-              Programming in-game logic for loot types: component anvil, item
-              anvil, artifact anvil.
+              Finish the remainder of the web-app's front-end design
             </li>
             <li className="pl-2 mt-2">
-              Adding augment rounds (player can choose between 3 passive
-              abilities for the remainder of the game)
+              Finish functionality of vendor page-creation
             </li>
             <li className="pl-2 mt-2">
-              Adding carousel rounds (players race to obtain various in-game
-              loot off a carousel)
+              Create client app context and add search functionality for vendor
+              lookup
             </li>
           </ul>
         </div>
@@ -208,7 +186,7 @@ export default function SoulFighters() {
             {projectData.images.map((src, index) => (
               <div
                 key={index}
-                className="relative w-full aspect-1/2 rounded-2xl overflow-hidden"
+                className="relative w-full aspect-2/1 rounded-lg overflow-hidden"
               >
                 <Image
                   src={src}
