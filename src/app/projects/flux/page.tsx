@@ -1,6 +1,10 @@
 import Image from "next/image";
 
-export default function Flux() {
+interface projProps {
+  onBack: () => void;
+}
+
+export default function Flux({ onBack }: projProps) {
   const projectData = {
     name: "Flux",
     role: "Lead Developer",
@@ -18,12 +22,21 @@ export default function Flux() {
     ],
   };
   return (
-    <>
+    <div className="flex flex-col gap-4">
       <div className="w-full flex justify-between items-center">
-        <div className="flex items-center">
-          <div className="w-1 h-1 bg-gray-500 rounded-full mr-2"></div>
-          <span className="text-gray-300/80">Project Info</span>
-        </div>
+        <button
+          className="flex gap-2 bg-neutral-900 hover:bg-neutral-900/60 pl-6 pr-7 py-2 rounded-full"
+          onClick={onBack}
+        >
+          <Image
+            src="/icons/back.svg"
+            alt="Link"
+            width={12}
+            height={12}
+            className=""
+          />
+          <span className="text-gray-300">Back</span>
+        </button>
         <div className="flex flex-row items-center bg-green-900/40 text-white gap-2 rounded-full px-4 py-0.5">
           <div className="w-1 h-1 bg-green-400 rounded-full"></div>
           <span className="text-green-600 text-sm">{projectData.state}</span>
@@ -181,6 +194,6 @@ export default function Flux() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

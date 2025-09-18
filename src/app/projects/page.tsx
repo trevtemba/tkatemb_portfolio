@@ -59,7 +59,14 @@ export default function Projects() {
   const SelectedProjectComponent = project?.comp;
 
   function SelectProject(projectName: string) {
-    setSelectedProject(projectName);
+    if (selectedProject === projectName) {
+      setSelectedProject(undefined);
+    } else {
+      setSelectedProject(projectName);
+    }
+  }
+  function handleBack() {
+    setSelectedProject(undefined);
   }
 
   function ProjectCard({ name, role, desc, tags, icon }: ProjectProps) {
@@ -160,7 +167,7 @@ export default function Projects() {
         {selectedProject && (
           <div className="w-full flex flex-col rounded-2xl py-4 px-5 gap-6">
             {SelectedProjectComponent ? (
-              <SelectedProjectComponent />
+              <SelectedProjectComponent onBack={handleBack} />
             ) : (
               <p>No component available for this project.</p>
             )}
