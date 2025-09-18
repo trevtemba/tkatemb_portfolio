@@ -4,15 +4,15 @@ interface projProps {
   onBack: () => void;
 }
 
-export default function Crown({ onBack }: projProps) {
+export default function Flux({ onBack }: projProps) {
   const projectData = {
-    name: "Crown",
+    name: "Flux",
     role: "Lead Developer",
-    desc: "Hair product recommendation mobile app",
-    tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
-    icon: "/icons/crownlogo.png",
-    github: "https://github.com/camscott16/Crown",
-    state: "Alpha",
+    desc: "CLI Application that gives timings for basic sound effects based on BPM",
+    tags: ["Go"],
+    icon: "/icons/fluxicon.png",
+    github: "https://github.com/trevtemba/bpm-effects-timings",
+    state: "Beta",
     video: undefined,
     images: [
       "/projectImages/crown/prev1.jpg",
@@ -117,13 +117,14 @@ export default function Crown({ onBack }: projProps) {
           </span>
           <div className="flex flex-col gap-2 px-6 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <p>
-              An IOS/Android app that recommends hair-care products to users
-              based on their curated "Hair Profile".
+              A command-line application that provides on-beat timings in
+              miliseconds.
             </p>
             <p>
-              <span>Crown's</span> purpose is to educate users on effective hair
-              maintenance while streamlining the process of selecting
-              personalized products and care routines.
+              The purpose of Flux is to save music producers time in calculating
+              "on-beat" timings for delays, reverbs, and compressors. I also
+              just wanted to make a very simple application so I could release
+              it on GitHub.
             </p>
           </div>
         </div>
@@ -132,10 +133,10 @@ export default function Crown({ onBack }: projProps) {
             Features
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
-            <li className="pl-2">JWT Authentication</li>
-            <li className="pl-2 mt-2">Multiple Hair Profile Support</li>
-            <li className="pl-2 mt-2">Hair Profile Creation Quiz</li>
-            <li className="pl-2 mt-2">Hair Product Recommendation Engine</li>
+            <li className="pl-2">
+              Accepts BPM input then outputs recommended timings for basic
+              effects.
+            </li>
           </ul>
         </div>
         <div className="w-full flex flex-col gap-2">
@@ -144,23 +145,11 @@ export default function Crown({ onBack }: projProps) {
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2">
-              How to build a cross-platform mobile app with React Native (Expo
-              Framework)
+              How to build a platform independent CLI application (basic) with
+              Go's standard libary
             </li>
             <li className="pl-2 mt-2">
-              How to build a REST API with <span>Go</span> using Gin web
-              framework
-            </li>
-            <li className="pl-2 mt-2">
-              How to design and implement a responsive and streamlined user
-              interface on mobile
-            </li>
-            <li className="pl-2 mt-2">
-              How to leverage OpenAI API to build a recommendation engine
-            </li>
-            <li className="pl-2 mt-2">
-              How to containerize a web server using Docker, and then deploying
-              the docker-image to deploy on a cloud-host (Railway)
+              How to "release" an application on GitHub for Linux/Windows/Mac
             </li>
           </ul>
         </div>
@@ -170,12 +159,16 @@ export default function Crown({ onBack }: projProps) {
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2 mt-2">
-              Fetch product data (images, price, links) to better display
-              recommendation results
+              Make Flux automatically read any open DAW (Digital Audio
+              Workstation) processes to retrieve BPM, instead of the user having
+              to manually type it in
             </li>
             <li className="pl-2 mt-2">
-              Develop amazon affiliate link generator for each recommended
-              product
+              Leverage{" "}
+              <a href="https://github.com/spf13/cobra" className="underline">
+                Cobra
+              </a>{" "}
+              library to modernize Flux and make it more extendable
             </li>
             <li className="pl-2 mt-2">User interface overhaul</li>
           </ul>

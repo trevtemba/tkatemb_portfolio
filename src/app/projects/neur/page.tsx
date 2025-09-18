@@ -4,21 +4,23 @@ interface projProps {
   onBack: () => void;
 }
 
-export default function Crown({ onBack }: projProps) {
+export default function Neur({ onBack }: projProps) {
   const projectData = {
-    name: "Crown",
+    name: "Neur",
     role: "Lead Developer",
-    desc: "Hair product recommendation mobile app",
-    tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
-    icon: "/icons/crownlogo.png",
-    github: "https://github.com/camscott16/Crown",
-    state: "Alpha",
+    desc: "Collegiate Entrepreneur social app",
+    tags: ["Go"],
+    icon: "/icons/neurlogo.png",
+    github: "https://github.com/trevtemba/neur-frontend",
+    state: "Postponed",
     video: undefined,
     images: [
-      "/projectImages/crown/prev1.jpg",
-      "/projectImages/crown/prev2.jpg",
-      "/projectImages/crown/prev3.jpg",
-      "/projectImages/crown/prev4.jpg",
+      "/projectImages/neur/prev1.png",
+      "/projectImages/neur/prev2.png",
+      "/projectImages/neur/prev3.png",
+      "/projectImages/neur/prev4.png",
+      "/projectImages/neur/prev5.png",
+      "/projectImages/neur/prev6.png",
     ],
   };
   return (
@@ -37,9 +39,9 @@ export default function Crown({ onBack }: projProps) {
           />
           <span className="text-gray-300">Back</span>
         </button>
-        <div className="flex flex-row items-center bg-green-900/40 text-white gap-2 rounded-full px-4 py-0.5">
-          <div className="w-1 h-1 bg-green-400 rounded-full"></div>
-          <span className="text-green-600 text-sm">{projectData.state}</span>
+        <div className="flex flex-row items-center bg-red-900/40 text-white gap-2 rounded-full px-4 py-0.5">
+          <div className="w-1 h-1 bg-red-400 rounded-full"></div>
+          <span className="text-red-600 text-sm">{projectData.state}</span>
         </div>
       </div>
       <div className="flex flex-col gap-2">
@@ -117,13 +119,15 @@ export default function Crown({ onBack }: projProps) {
           </span>
           <div className="flex flex-col gap-2 px-6 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <p>
-              An IOS/Android app that recommends hair-care products to users
-              based on their curated "Hair Profile".
+              A booking site platform for hair and nail services in college
+              communities
             </p>
             <p>
-              <span>Crown's</span> purpose is to educate users on effective hair
-              maintenance while streamlining the process of selecting
-              personalized products and care routines.
+              The purpose of Neur is to provide a booking platform for college
+              students that wish to sell or purchase hair/nail services. The
+              project is postponed indefinitely, but the idea, design, and
+              learning outcomes are worth sharing, as it's my first fullstack
+              project
             </p>
           </div>
         </div>
@@ -132,10 +136,16 @@ export default function Crown({ onBack }: projProps) {
             Features
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
-            <li className="pl-2">JWT Authentication</li>
-            <li className="pl-2 mt-2">Multiple Hair Profile Support</li>
-            <li className="pl-2 mt-2">Hair Profile Creation Quiz</li>
-            <li className="pl-2 mt-2">Hair Product Recommendation Engine</li>
+            <li className="pl-2">JWT authentication (Spring Security)</li>
+            <li className="pl-2">
+              Vendor profile actions (creating/modifying/deleting services)
+            </li>
+            <li className="pl-2">
+              Rest API that supports basic CRUD operations on vendor data
+            </li>
+            <li className="pl-2">
+              Rich user interface with minimalistic widgets and animations
+            </li>
           </ul>
         </div>
         <div className="w-full flex flex-col gap-2">
@@ -144,23 +154,23 @@ export default function Crown({ onBack }: projProps) {
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2">
-              How to build a cross-platform mobile app with React Native (Expo
-              Framework)
+              How to use Java Spring Boot to build a REST API.
             </li>
             <li className="pl-2 mt-2">
-              How to build a REST API with <span>Go</span> using Gin web
-              framework
+              How to use Java Database Connectivity (JDBC) to connect to a
+              PostgreSQL database and Hibernate (ORM) to manage entities and
+              perform CRUD operations.
             </li>
             <li className="pl-2 mt-2">
-              How to design and implement a responsive and streamlined user
-              interface on mobile
+              How to build a beautiful and interactive front-end with React and
+              CSS.
             </li>
             <li className="pl-2 mt-2">
-              How to leverage OpenAI API to build a recommendation engine
+              How to containerize a REST API with docker and then deploy the
+              docker image to a cloud hosting platform (Railway)
             </li>
             <li className="pl-2 mt-2">
-              How to containerize a web server using Docker, and then deploying
-              the docker-image to deploy on a cloud-host (Railway)
+              How to test API endpoints with Postman
             </li>
           </ul>
         </div>
@@ -170,14 +180,15 @@ export default function Crown({ onBack }: projProps) {
           </span>
           <ul className="list-disc list-outside pl-8 p-4 py-6 tracking-widest text-neutral-200 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-lg">
             <li className="pl-2 mt-2">
-              Fetch product data (images, price, links) to better display
-              recommendation results
+              Finish the remainder of the web-app's front-end design
             </li>
             <li className="pl-2 mt-2">
-              Develop amazon affiliate link generator for each recommended
-              product
+              Finish functionality of vendor page-creation
             </li>
-            <li className="pl-2 mt-2">User interface overhaul</li>
+            <li className="pl-2 mt-2">
+              Create client app context and add search functionality for vendor
+              lookup
+            </li>
           </ul>
         </div>
         <div className="w-full flex flex-col gap-2">
@@ -188,7 +199,7 @@ export default function Crown({ onBack }: projProps) {
             {projectData.images.map((src, index) => (
               <div
                 key={index}
-                className="relative w-full aspect-1/2 rounded-2xl overflow-hidden"
+                className="relative w-full aspect-2/1 rounded-lg overflow-hidden"
               >
                 <Image
                   src={src}

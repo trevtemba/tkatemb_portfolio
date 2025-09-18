@@ -5,6 +5,8 @@ import Image from "next/image";
 import { Component, useState } from "react";
 import Crown from "./crown/page";
 import SoulFighters from "./soulfighters/page";
+import Flux from "./flux/page";
+import Neur from "./neur/page";
 
 export default function Projects() {
   const projects = [
@@ -25,11 +27,12 @@ export default function Projects() {
       comp: SoulFighters,
     },
     {
-      name: "SFX Mapper",
+      name: "Flux",
       role: "Lead Developer",
-      desc: "CLI tool that gives basic sound effects timings based on bpm",
+      desc: "CLI tool that gives basic sound effects timings based on BPM",
       tags: ["Go"],
-      icon: "/icons/flux.png",
+      icon: "/icons/fluxicon.png",
+      comp: Flux,
     },
     {
       name: "Neur",
@@ -37,6 +40,7 @@ export default function Projects() {
       desc: "Collegiate Entrepreneur social app",
       tags: ["Java (Sprint Boot)", "JavaScript (React)"],
       icon: "/icons/neurlogo.png",
+      comp: Neur,
     },
   ];
 
@@ -55,7 +59,14 @@ export default function Projects() {
   const SelectedProjectComponent = project?.comp;
 
   function SelectProject(projectName: string) {
-    setSelectedProject(projectName);
+    if (selectedProject === projectName) {
+      setSelectedProject(undefined);
+    } else {
+      setSelectedProject(projectName);
+    }
+  }
+  function handleBack() {
+    setSelectedProject(undefined);
   }
 
   function ProjectCard({ name, role, desc, tags, icon }: ProjectProps) {
@@ -156,7 +167,7 @@ export default function Projects() {
         {selectedProject && (
           <div className="w-full flex flex-col rounded-2xl py-4 px-5 gap-6">
             {SelectedProjectComponent ? (
-              <SelectedProjectComponent />
+              <SelectedProjectComponent onBack={handleBack} />
             ) : (
               <p>No component available for this project.</p>
             )}
