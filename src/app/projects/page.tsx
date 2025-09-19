@@ -1,6 +1,5 @@
 "use client";
 
-import { spawn } from "child_process";
 import Image from "next/image";
 import { Component, useState } from "react";
 import Crown from "./crown/page";
@@ -16,7 +15,7 @@ export default function Projects() {
       desc: "Hair product recommendation mobile app",
       tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
       icon: "/icons/crownlogo.png",
-      state: "available",
+      status: "available" as Status,
       comp: Crown,
     },
     {
@@ -25,7 +24,7 @@ export default function Projects() {
       desc: "Round-based fighting game",
       tags: ["Lua (Luau)", "Blender"],
       icon: "/icons/explosionlabs.png",
-      state: "development",
+      status: "development" as Status,
       comp: SoulFighters,
     },
     {
@@ -34,7 +33,7 @@ export default function Projects() {
       desc: "CLI tool that gives basic sound effects timings based on BPM",
       tags: ["Go"],
       icon: "/icons/fluxicon.png",
-      state: "available",
+      status: "available" as Status,
       comp: Flux,
     },
     {
@@ -43,23 +42,28 @@ export default function Projects() {
       desc: "Collegiate Entrepreneur social app",
       tags: ["Java (Sprint Boot)", "JavaScript (React)"],
       icon: "/icons/neurlogo.png",
-      state: "unavailable",
+      status: "unavailable" as Status,
       comp: Neur,
     },
   ];
 
-  const stateColorMap = {
+  type Status = "available" | "development" | "unavailable";
+
+  const stateColorMap: Record<Status, { outer: string; inner: string }> = {
     available: {
-      outer: "bg-green-700/20",
-      inner: "bg-green-600",
+      outer:
+        "flex bg-green-700/20 h-6 w-6 rounded-full items-center justify-center",
+      inner: "bg-green-600 h-2 w-2 rounded-full",
     },
     development: {
-      outer: "bg-blue-700/20",
-      inner: "bg-blue-600",
+      outer:
+        "flex bg-blue-700/20 h-6 w-6 rounded-full items-center justify-center",
+      inner: "bg-blue-600 h-2 w-2 rounded-full",
     },
     unavailable: {
-      outer: "bg-red-700/20",
-      inner: "bg-red-600",
+      outer:
+        "flex bg-red-700/20 h-6 w-6 rounded-full items-center justify-center",
+      inner: "bg-red-600 h-2 w-2 rounded-full",
     },
   };
 
@@ -69,6 +73,7 @@ export default function Projects() {
     desc: string;
     tags: string[];
     icon: string;
+    status: Status;
   };
 
   const [selectedProject, setSelectedProject] = useState<string | undefined>(
@@ -88,7 +93,7 @@ export default function Projects() {
     setSelectedProject(undefined);
   }
 
-  function ProjectCard({ name, role, desc, tags, icon }: ProjectProps) {
+  function ProjectCard({ name, role, desc, tags, icon, status }: ProjectProps) {
     return (
       <button
         key={name}
@@ -117,8 +122,8 @@ export default function Projects() {
                   <h1 className="text-white text-2xl text-left font-bold">
                     {name}
                   </h1>
-                  <div className="flex bg-green-700/20 h-6 w-6 rounded-full items-center justify-center">
-                    <div className="bg-green-600 h-2 w-2 rounded-full"></div>
+                  <div className={stateColorMap[status].outer}>
+                    <div className={stateColorMap[status].inner}></div>
                   </div>
                 </div>
 
