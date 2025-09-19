@@ -39,7 +39,7 @@ export default function Home() {
             </p>
             <div className="flex flex-row gap-2">
               <a
-                href="/Trevor_Katemba_2025_Resume_v3.pdf"
+                href="/tkatemb_resume_v4_final.pdf"
                 download
                 className="flex flex-row justify-between bg-neutral-700 hover:bg-neutral-700/80 text-white text-sm font-medium px-4 py-2 border border-gray-600 rounded-sm shadow transition gap-2"
               >
