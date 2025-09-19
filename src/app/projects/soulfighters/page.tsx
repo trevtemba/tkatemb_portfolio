@@ -13,13 +13,8 @@ export default function SoulFighters({ onBack }: projProps) {
     icon: "/icons/explosionlabs.png",
     github: "https://github.com/trevtemba/ArenaFightingGame",
     state: "In-Development",
-    video: undefined,
-    images: [
-      "/projectImages/crown/prev1.jpg",
-      "/projectImages/crown/prev2.jpg",
-      "/projectImages/crown/prev3.jpg",
-      "/projectImages/crown/prev4.jpg",
-    ],
+    video: "https://youtu.be/I7BZO-raesg?si=SkHVlGxZ0SQBS3Qy",
+    images: [],
   };
   return (
     <div className="flex flex-col gap-4">
@@ -92,21 +87,21 @@ export default function SoulFighters({ onBack }: projProps) {
                     className=""
                   />
                 </a>{" "}
-                {/* <a
-                href={projectData.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-row justify-between bg-neutral-700 hover:bg-neutral-700/80 text-white text-sm font-medium px-4 py-2 border border-gray-600 rounded-sm shadow transition gap-2"
-              >
-                Vid Demo
-                <Image
-                  src="/icons/newtab.svg"
-                  alt="Link"
-                  width={12}
-                  height={12}
-                  className=""
-                />
-              </a> */}
+                <a
+                  href={projectData.video}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-row justify-between bg-neutral-700 hover:bg-neutral-700/80 text-white text-sm font-medium px-4 py-2 border border-gray-600 rounded-sm shadow transition gap-2"
+                >
+                  Vid Demo
+                  <Image
+                    src="/icons/newtab.svg"
+                    alt="Link"
+                    width={12}
+                    height={12}
+                    className=""
+                  />
+                </a>
               </div>
             </div>
           </div>
@@ -218,6 +213,7 @@ export default function SoulFighters({ onBack }: projProps) {
             Showcase
           </span>
           <div className="flex flex-col w-full px-4 py-4 bg-neutral-900/40 border border-neutral-700/80 shadow rounded-3xl gap-4">
+            Checkout video demo above!
             {projectData.images.map((src, index) => (
               <div
                 key={index}

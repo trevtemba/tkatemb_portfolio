@@ -129,6 +129,17 @@ export default function Neur({ onBack }: projProps) {
               learning outcomes are worth sharing, as it's my first fullstack
               project
             </p>
+            <p>
+              Here's the backend{" "}
+              <a
+                href="https://github.com/trevtemba/neur-backend"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                GitHub
+              </a>
+            </p>
           </div>
         </div>
         <div className="w-full flex flex-col gap-2">

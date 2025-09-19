@@ -1,6 +1,5 @@
 "use client";
 
-import { spawn } from "child_process";
 import Image from "next/image";
 import { Component, useState } from "react";
 import Crown from "./crown/page";
@@ -16,6 +15,7 @@ export default function Projects() {
       desc: "Hair product recommendation mobile app",
       tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
       icon: "/icons/crownlogo.png",
+      status: "available" as Status,
       comp: Crown,
     },
     {
@@ -24,6 +24,7 @@ export default function Projects() {
       desc: "Round-based fighting game",
       tags: ["Lua (Luau)", "Blender"],
       icon: "/icons/explosionlabs.png",
+      status: "development" as Status,
       comp: SoulFighters,
     },
     {
@@ -32,6 +33,7 @@ export default function Projects() {
       desc: "CLI tool that gives basic sound effects timings based on BPM",
       tags: ["Go"],
       icon: "/icons/fluxicon.png",
+      status: "available" as Status,
       comp: Flux,
     },
     {
@@ -40,9 +42,30 @@ export default function Projects() {
       desc: "Collegiate Entrepreneur social app",
       tags: ["Java (Sprint Boot)", "JavaScript (React)"],
       icon: "/icons/neurlogo.png",
+      status: "unavailable" as Status,
       comp: Neur,
     },
   ];
+
+  type Status = "available" | "development" | "unavailable";
+
+  const stateColorMap: Record<Status, { outer: string; inner: string }> = {
+    available: {
+      outer:
+        "flex bg-green-700/20 h-6 w-6 rounded-full items-center justify-center",
+      inner: "bg-green-600 h-2 w-2 rounded-full",
+    },
+    development: {
+      outer:
+        "flex bg-blue-700/20 h-6 w-6 rounded-full items-center justify-center",
+      inner: "bg-blue-600 h-2 w-2 rounded-full",
+    },
+    unavailable: {
+      outer:
+        "flex bg-red-700/20 h-6 w-6 rounded-full items-center justify-center",
+      inner: "bg-red-600 h-2 w-2 rounded-full",
+    },
+  };
 
   type ProjectProps = {
     name: string;
@@ -50,6 +73,7 @@ export default function Projects() {
     desc: string;
     tags: string[];
     icon: string;
+    status: Status;
   };
 
   const [selectedProject, setSelectedProject] = useState<string | undefined>(
@@ -69,7 +93,7 @@ export default function Projects() {
     setSelectedProject(undefined);
   }
 
-  function ProjectCard({ name, role, desc, tags, icon }: ProjectProps) {
+  function ProjectCard({ name, role, desc, tags, icon, status }: ProjectProps) {
     return (
       <button
         key={name}
@@ -94,9 +118,15 @@ export default function Projects() {
             <div className="flex-[12] h-26 flex flex-col justify-between">
               {/* Bio section */}
               <div className="flex flex-col">
-                <h1 className="text-white text-2xl text-left font-bold">
-                  {name}
-                </h1>
+                <div className="flex flex-row gap-2 justify-between items-center">
+                  <h1 className="text-white text-2xl text-left font-bold">
+                    {name}
+                  </h1>
+                  <div className={stateColorMap[status].outer}>
+                    <div className={stateColorMap[status].inner}></div>
+                  </div>
+                </div>
+
                 <div className="flex flex-row gap-1">
                   <Image
                     src="/icons/developer.svg"
