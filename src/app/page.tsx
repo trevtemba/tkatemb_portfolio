@@ -102,7 +102,7 @@ export default function Home() {
           {/* Project card */}
           <div className="flex w-full justify-between items-stretch gap-4 bg-neutral-800 px-4 py-4 rounded-2xl border border-neutral-700 shadow">
             {/*  Image */}
-            <div className="flex-[6] flex flex-col items-center flex-shrink-0">
+            <div className="flex-[3] flex flex-col items-center flex-shrink-0">
               <div className="w-26 h-26 sm:w-32 sm:h-32 shrink-0 rounded-2xl bg-neutral-700/20 p-1 shadow-lg flex items-center justify-center border border-neutral-100/15">
                 <Image
                   src="/icons/tdsynnex.png"
@@ -114,7 +114,7 @@ export default function Home() {
               </div>
             </div>
             {/* Details */}
-            <div className="flex-[12] h-26 flex flex-col justify-between">
+            <div className="flex-[7] h-26 flex flex-col justify-between">
               {/* Bio section */}
               <div className="flex flex-col">
                 <h1 className="text-white text-2xl font-bold">TD Synnex</h1>
@@ -137,26 +137,17 @@ export default function Home() {
               {/* skils */}
               <div className="flex flex-row gap-1">
                 <span className="bg-neutral-900 px-4 py-1 rounded-full text-xs">
-                  Typescript
+                  Gong.io
                 </span>
                 <span className="bg-neutral-900 px-4 py-1 rounded-full text-xs">
-                  NextChat
+                  NexChat
                 </span>
               </div>
-            </div>
-            <div className="flex-[1] flex h-26 flex-col justify-center align-center">
-              <Image
-                src="/icons/arrow_forward.svg"
-                alt="Profile"
-                width={24}
-                height={24}
-                className="brightness-50"
-              />
             </div>
           </div>
           <div className="flex w-full justify-between items-stretch gap-4 bg-neutral-800 px-4 py-4 rounded-2xl border border-neutral-700 shadow">
             {/*  Image */}
-            <div className="flex-[6] flex flex-col items-center flex-shrink-0">
+            <div className="flex-[3] flex flex-col items-center flex-shrink-0">
               <div className="w-26 h-26 sm:w-32 sm:h-32 shrink-0 rounded-2xl bg-neutral-700/20 p-1 shadow-lg flex items-center justify-center border border-neutral-100/15">
                 <Image
                   src="/icons/explosionlabs.png"
@@ -168,7 +159,7 @@ export default function Home() {
               </div>
             </div>
             {/* Details */}
-            <div className="flex-[12] h-26 flex flex-col justify-between">
+            <div className="flex-[7] h-26 flex flex-col justify-between">
               {/* Bio section */}
               <div className="flex flex-col">
                 <h1 className="text-white text-2xl font-bold">Soul Fighters</h1>
@@ -197,15 +188,6 @@ export default function Home() {
                   Roblox Studio
                 </span>
               </div>
-            </div>
-            <div className="flex-[1] flex h-26 flex-col justify-center align-center">
-              <Image
-                src="/icons/arrow_forward.svg"
-                alt="Profile"
-                width={24}
-                height={24}
-                className="brightness-50"
-              />
             </div>
           </div>
         </div>

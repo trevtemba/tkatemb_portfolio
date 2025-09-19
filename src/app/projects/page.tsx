@@ -16,6 +16,7 @@ export default function Projects() {
       desc: "Hair product recommendation mobile app",
       tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
       icon: "/icons/crownlogo.png",
+      state: "available",
       comp: Crown,
     },
     {
@@ -24,6 +25,7 @@ export default function Projects() {
       desc: "Round-based fighting game",
       tags: ["Lua (Luau)", "Blender"],
       icon: "/icons/explosionlabs.png",
+      state: "development",
       comp: SoulFighters,
     },
     {
@@ -32,6 +34,7 @@ export default function Projects() {
       desc: "CLI tool that gives basic sound effects timings based on BPM",
       tags: ["Go"],
       icon: "/icons/fluxicon.png",
+      state: "available",
       comp: Flux,
     },
     {
@@ -40,9 +43,25 @@ export default function Projects() {
       desc: "Collegiate Entrepreneur social app",
       tags: ["Java (Sprint Boot)", "JavaScript (React)"],
       icon: "/icons/neurlogo.png",
+      state: "unavailable",
       comp: Neur,
     },
   ];
+
+  const stateColorMap = {
+    available: {
+      outer: "bg-green-700/20",
+      inner: "bg-green-600",
+    },
+    development: {
+      outer: "bg-blue-700/20",
+      inner: "bg-blue-600",
+    },
+    unavailable: {
+      outer: "bg-red-700/20",
+      inner: "bg-red-600",
+    },
+  };
 
   type ProjectProps = {
     name: string;
@@ -94,9 +113,15 @@ export default function Projects() {
             <div className="flex-[12] h-26 flex flex-col justify-between">
               {/* Bio section */}
               <div className="flex flex-col">
-                <h1 className="text-white text-2xl text-left font-bold">
-                  {name}
-                </h1>
+                <div className="flex flex-row gap-2 justify-between items-center">
+                  <h1 className="text-white text-2xl text-left font-bold">
+                    {name}
+                  </h1>
+                  <div className="flex bg-green-700/20 h-6 w-6 rounded-full items-center justify-center">
+                    <div className="bg-green-600 h-2 w-2 rounded-full"></div>
+                  </div>
+                </div>
+
                 <div className="flex flex-row gap-1">
                   <Image
                     src="/icons/developer.svg"
