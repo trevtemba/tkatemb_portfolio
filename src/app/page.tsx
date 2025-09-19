@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -89,7 +90,10 @@ export default function Home() {
               <div className="w-1 h-1 bg-cyan-400 rounded-full"></div>
               <span className="text-cyan-500 text-sm">Current Projects</span>
             </div>
-            <a className="flex flex-row justify-between bg-neutral-700 hover:bg-neutral-700/80 text-white gap-2 rounded-sm px-4 py-2 border border-gray-600 shadow transition">
+            <Link
+              href={"/projects"}
+              className="flex flex-row justify-between bg-neutral-700 hover:bg-neutral-700/80 text-white gap-2 rounded-sm px-4 py-2 border border-gray-600 shadow transition"
+            >
               <span className="text-white text-xs">View All</span>
               <Image
                 src="/icons/view.svg"
@@ -97,7 +101,7 @@ export default function Home() {
                 width={12}
                 height={12}
               />
-            </a>
+            </Link>
           </div>
           {/* Project card */}
           <div className="flex w-full justify-between items-stretch gap-4 bg-neutral-800 px-4 py-4 rounded-2xl border border-neutral-700 shadow">
