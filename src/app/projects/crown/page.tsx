@@ -11,7 +11,7 @@ export default function Crown({ onBack }: projProps) {
     desc: "Hair product recommendation mobile app",
     tags: ["Go (Gin)", "TypeScript (React Native)", "OpenAI API"],
     icon: "/icons/crownlogo.png",
-    github: "https://github.com/camscott16/Crown",
+    github: "https://github.com/trevtemba/Crown",
     state: "Alpha",
     video: undefined,
     images: [
